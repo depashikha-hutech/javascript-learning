@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <!-- javascript function in head tag-->
+    <script>
+        function myfunction() {
+            document.getElementById("demo").innerHTML="Paragraph changed.";
+        }
+    
+    </script>
+</head>
+<body>
+    <!--changing content of html using js-->
+    <p id="demo"> javascript can change</p>
+    <button type="button" onclick="myfunction()">try it</button>
+    <button type="button" onclick="document.getElementById('demo').style.fontSize='35px'">altersize</button>
+    <button type="button" onclick="document.getElementById('demo').style.display='none'">hide</button>
+    <button onclick="myFunction()">Try it again</button>
+    <button onclick="myFunction()">Sort</button>
+    
+    
+    <!---to acess an Html element,javascript using document.get element id-->
+    <button type="button"onclick= 'document.getElementById("demo") .innerHTML=
+    "Hello javavascript!"'> Click Me! </button>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo4"></p> 
+    <p id="demo5"></p>
+    <p id="demo5"></p>
+    <p id="demo7"></p>
+
+    <script>
+        //writing into anHtml element,using innerhtml
+        document.getElementById("demo1").innerHTML="my first.";
+        document.getElementById("demo1").innerHTML= 5+6;
+        //writing  into an alert box,using window.alert()
+        alert(5 + 6);
+    </script>
+    <!--random sorting-->
+    <script>
+    const points5 = [40, 100, 1, 5, 25, 10];
+    document.getElementById("demo4").innerHTML = points5;  
+    
+    function myFunction() {
+      points5.sort(function(){return 0.5 - Math.random()});
+      document.getElementById("demo4").innerHTML = points5;
+    }
+    </script>
+    <!--sort on click-->
+    <script>
+const cars = [
+  {type:"Volvo", year:2016},
+  {type:"Saab", year:2001},
+  {type:"BMW", year:2010}
+];
+
+displayCars();
+
+function myFunction() {
+  cars.sort(function(a, b){
+    let x = a.type.toLowerCase();
+    let y = b.type.toLowerCase();
+    if (x < y) {return -1;}
+    if (x > y) {return 1;}
+    return 0;
+  });
+  displayCars();
+}
+
+function displayCars() {
+  document.getElementById("demo5").innerHTML =
+  cars[0].type + " " + cars[0].year + "<br>" +
+  cars[1].type + " " + cars[1].year + "<br>" +
+  cars[2].type + " " + cars[2].year;
+}
+</script>
+<!--array enties-->
+<script>
+    const fruits9 = ["Banana", "Orange", "Apple", "Mango"];
+    const f1 = fruits9.entries();
+    
+    for (let x of f1) {
+      document.getElementById("demo7").innerHTML += x + "<br>";
+    }
+    </script>
+    <!--math const-->
+    <p id="demo9"></p>
+
+    <script>
+    document.getElementById("demo9").innerHTML = 
+    "<p><b>Math.E:</b> " + Math.E + "</p>" +
+    "<p><b>Math.PI:</b> " + Math.PI + "</p>" +
+    "<p><b>Math.SQRT2:</b> " + Math.SQRT2 + "</p>" +
+    "<p><b>Math.SQRT1_2:</b> " + Math.SQRT1_2 + "</p>" +
+    "<p><b>Math.LN2:</b> " + Math.LN2 + "</p>" +
+    "<p><b>Math.LN10:</b> " + Math.LN10 + "</p>" +
+    "<p><b>Math.LOG2E:</b> " + Math.LOG2E + "</p>" +
+    "<p><b>Math.Log10E:</b> " + Math.LOG10E + "</p>";
+    </script>
+    <!--error try and catch-->
+    <p> please input a number between 6 and 20:</p>
+    <input id="demo99" type="text66">
+    <button type="button" onclick="myFunction9()">Test Input</button>
+    <p id="p23"></p>
+
+<script>
+function myFunction9() {
+  const message = document.getElementById("p23");
+  message.innerHTML = "";
+  let x8 = document.getElementById("demo99").value;
+  try { 
+    if(x8 == "")  throw "empty";
+    if(isNaN(x8)) throw "not a number";
+    x8 = Number(x8);
+    if(x8 < 6)  throw "too low";
+    if(x8 > 20)   throw "too high";
+  }
+  catch(err) {
+    message.innerHTML = "Input is " + err;
+  }
+}
+ </script>  
+
+<br> </br>
+  <button onclick="document.getElementById('demo').innerHTML=Date()">The time is?</button>
+    <!--- function call from external js file-->
+    <input type="button" onclick="changeContent()"value="display">
+    <!--linking external js file-->
+    <script src="jsbasic-wk1.js">
+    </script>
+    <script src="jsbasic-wk2.js">
+    </script>
+</body>
+</html>
